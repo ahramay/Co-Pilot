@@ -1,0 +1,24 @@
+.strategy {
+  color: #fff;
+  font-size: 20px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 90%;
+  padding: 20px;
+  margin: auto;
+}
+.strategy {
+  overflow: auto;
+}
+.strategy::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+.strategy {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.strategy::-webkit-scrollbar {
+  width: 0px;
+}

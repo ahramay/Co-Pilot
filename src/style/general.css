@@ -1,0 +1,56 @@
+.general {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* width: 100vh; */
+  background-color: var(--Background);
+  height: 90svh !important;
+  padding-top: 70px;
+}
+.general .selectAdvisor {
+  color: #fff;
+  font-family: Poppins !important;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.general .generalCard {
+  width: 90%;
+  height: 150px;
+  border-radius: 8px;
+  background-color: var(--Background, #013b37);
+  border: 1px solid var(--inactive);
+  padding: 16px;
+  cursor: pointer;
+}
+.general .generalCard:hover {
+  background-color: var(--hoverColor);
+}
+.general .generalCard .cardTitle {
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+  margin: 10px 0px;
+}
+.general .generalCard .cardText {
+  color: #a2dbd7;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 151.8%; /* 21.252px */
+}
+
+@media screen and (max-width: 1199px) {
+  .general .generalCard .cardTitle {
+    font-size: 16px;
+  }
+  .general .generalCard .cardText {
+    font-size: 14px;
+  }
+}

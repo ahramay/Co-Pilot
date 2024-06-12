@@ -1,0 +1,61 @@
+.sidebar {
+  background-color: var(--background) !important;
+}
+.sidebar .appBar {
+  background-color: var(--background) !important;
+}
+.sidebar .appBar .selectedAdviser {
+  color: var(--Inactive, #0f948b);
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+/* side collapse  */
+.sidebar .appbarCollapse {
+  border: 2px solid var(--inactive);
+  border-radius: 8px;
+  padding: 8px;
+  max-height: 350px;
+  overflow-y: auto;
+  background-color: var(--background);
+}
+.sidebar .appbarCollapse .collapseDiv {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px auto;
+  width: 95%;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  gap: 10px;
+  background-color: transparent;
+}
+.sidebar .appbarCollapse .collapseDiv:hover {
+  background-color: #0f948b !important;
+}
+.sidebar .appbarCollapse .textSection {
+  background-color: transparent;
+  /* width: 230px; */
+}
+.sidebar .appbarCollapse .textSection p {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0px;
+  background-color: transparent;
+}
+.sidebar .appbarCollapse .textSection span {
+  margin: 0px;
+  color: #a2dbd7;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  /* line-height: 151.2%; */
+  background-color: transparent;
+}

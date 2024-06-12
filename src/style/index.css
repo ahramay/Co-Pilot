@@ -1,0 +1,18 @@
+@import "./sidebar.css";
+@import "./historyList.css";
+@import "./general.css";
+@import "./strategy.css";
+@import "./userMessage.css";
+@import "./botResponce.css";
+
+:root {
+  --inactive: #0f948b;
+  --background: #013b37;
+  --darkBackground: #012926;
+  --iconsColor: #15cc8f;
+  --hoverColor: #0f948b;
+}
+
+body {
+  background-color: var(--background) !important;
+}
