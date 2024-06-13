@@ -1,11 +1,10 @@
 .general {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  /* width: 100vh; */
   background-color: var(--Background);
-  height: 90svh !important;
+  height: 90svh;
+  overflow: auto;
   padding-top: 70px;
 }
 .general .selectAdvisor {
@@ -24,6 +23,7 @@
   border: 1px solid var(--inactive);
   padding: 16px;
   cursor: pointer;
+  margin: auto;
 }
 .general .generalCard:hover {
   background-color: var(--hoverColor);
@@ -52,5 +52,10 @@
   }
   .general .generalCard .cardText {
     font-size: 14px;
+  }
+}
+@media screen and (max-width: 899px) {
+  .general {
+    padding-top: 30px;
   }
 }

@@ -15,3 +15,11 @@
   font-weight: 400;
   line-height: 151.4%;
 }
+@media screen and (max-width:899px) {
+  .botResponce{
+    width: 100%;
+  }
+  .botResponce p {
+    font-size: 14px;
+  }
+}

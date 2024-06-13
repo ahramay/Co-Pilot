@@ -1,7 +1,7 @@
 .strategy {
   color: #fff;
   font-size: 20px;
-  max-height: 80vh;
+  height: 90svh;
   overflow: auto;
   width: 90%;
   padding: 20px;
@@ -21,4 +21,9 @@
 }
 .strategy::-webkit-scrollbar {
   width: 0px;
+}
+@media screen and (max-width:899px) {
+  .strategy{
+    width: 100%;
+  }
 }

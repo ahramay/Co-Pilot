@@ -10,7 +10,7 @@ const General: React.FC = () => {
       <Grid container rowSpacing={2} marginTop={3}>
         {GeneralData.map((value, index) => {
           return (
-            <Grid key={`${value.title}_${index}`} item md={4} lg={4}>
+            <Grid key={`${value.title}_${index}`} item xs={12} sm={6} md={4} lg={4}>
               <Card className="generalCard">
                 {value.icon}
                 <Typography variant="body1" className="cardTitle" component="p">

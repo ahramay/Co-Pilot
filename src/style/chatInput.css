@@ -1,0 +1,87 @@
+.chatInput {
+  position: fixed;
+  bottom: 0px;
+  height: 75px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--background);
+}
+.chatInput .chatPaper {
+  padding: 2px 4px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  width: 50%;
+  background-color: #013b37 !important;
+  border: 1px solid #0f948b !important;
+  border-radius: 18px !important;
+  margin-left: 50px;
+}
+
+.chatInput .inputField {
+  padding-bottom: 12px !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 151.4% !important; /* 24.224px */
+}
+.chatInput .inputField::placeholder {
+  color: red !important;
+}
+.chatInput .iconButton svg {
+  transition: fill 0.5s ease-in-out;
+}
+
+.chatInput .chatPaper:hover {
+  transition: 0.5s ease-in-out;
+  border-color: var(--iconsColor) !important;
+}
+
+.chatInput .chatPaper:hover .iconButton path {
+  fill: var(--background) !important;
+}
+
+.chatPaper:hover .iconButton rect {
+  fill: var(--iconsColor) !important;
+}
+
+.chatInput .chatPaper:hover .iconButton2 path {
+  fill: var(--iconsColor) !important;
+}
+.chatInput .botIcon {
+  position: absolute;
+  right: 30px;
+}
+@media screen and (max-width: 899px) {
+  .chatInput .botIcon {
+    position: static;
+    /* right: 0px; */
+  }
+  .chatInput .chatPaper {
+    width: 80%;
+    margin-left: 0px;
+  }
+  .iconButton {
+    padding-bottom: 10px !important;
+  }
+  .iconButton svg {
+    width: 22px;
+  }
+  .iconButton2 {
+    padding-bottom: 13px !important;
+  }
+  .iconButton2 svg {
+    width: 22px;
+  }
+  .chatInput .inputField {
+    padding-bottom: 14px !important;
+    font-size: 14px !important;
+  }
+  .chatInput {
+    margin-left: 0px !important;
+  }
+}

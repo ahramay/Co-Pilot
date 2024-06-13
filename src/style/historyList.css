@@ -10,6 +10,18 @@
   line-height: normal;
   color: var(--Inactive, #0f948b);
 }
+
+.historyList .delIcon {
+  font-size: 20px;
+  display: flex;
+  cursor: pointer;
+  color: #013b37;
+  position: relative;
+  top: 15px;
+  left: 190px;
+  z-index: 12;
+  background-color: transparent !important;
+}
 .historyList .historySection {
   width: 100%;
   border-bottom: 1px solid #0f948b;
@@ -36,11 +48,16 @@
   -webkit-box-orient: vertical;
   position: relative;
 }
-/* .historyList .historyText::after {
-  content: "...";
-  position: absolute;
-  bottom: 10;
-  right: 0;
-  color: #fff;
-  padding-left: 10px;
-} */
+
+@media screen and (max-width: 899px) {
+  .historyList .historyText {
+    width: 93% !important;
+  }
+  .historyList .delIcon {
+    position: relative;
+    top: 10px;
+    left: 255px;
+    z-index: 12;
+    background-color: transparent !important;
+  }
+}

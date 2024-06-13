@@ -8,6 +8,8 @@ import {
   Toolbar,
   Typography,
   styled,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import collapseData from "./collapseData";
 // import icons here
@@ -17,6 +19,7 @@ import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDown
 import HistoryList from "../historyList";
 import General from "../../pages/home/general";
 import Strategy from "../../pages/home/strategy";
+import ChatInput from "../chatInput";
 const drawerWidth = 240;
 
 interface CaretIconProps {
@@ -52,8 +55,11 @@ const dummyData: { date: string; msg: string[] }[] = [
 
 const Sidebar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [smallDrawerOpen, setSmallDrawerOpen] = useState<boolean>(false);
   const [activeAdvisery, setActiveAdvisery] = useState<Number>(0);
   const [adviseryTitle, setAdviseryTitle] = useState<string>("General");
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const handleCollapse = () => {
     setOpen(!open);
   };
@@ -69,8 +75,8 @@ const Sidebar: React.FC = () => {
           className="appBar"
           position="fixed"
           sx={{
-            width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
+            width: isMediumScreen ? "100%" : `calc(100% - ${drawerWidth}px)`,
+            ml: isMediumScreen ? `${drawerWidth}px` : 0,
           }}
         >
           <Box
@@ -78,8 +84,28 @@ const Sidebar: React.FC = () => {
             display={"flex"}
             justifyContent={"space-between"}
             alignItems={"center"}
-            paddingX={4}
+            sx={{ paddingX: 3 }}
           >
+            {isMediumScreen && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                onClick={() => {
+                  setSmallDrawerOpen(!smallDrawerOpen);
+                }}
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M2 4.75C2 4.33579 2.33579 4 2.75 4H17.25C17.6642 4 18 4.33579 18 4.75C18 5.16421 17.6642 5.5 17.25 5.5H2.75C2.33579 5.5 2 5.16421 2 4.75ZM2 10C2 9.58579 2.33579 9.25 2.75 9.25H17.25C17.6642 9.25 18 9.58579 18 10C18 10.4142 17.6642 10.75 17.25 10.75H2.75C2.33579 10.75 2 10.4142 2 10ZM2 15.25C2 14.8358 2.33579 14.5 2.75 14.5H17.25C17.6642 14.5 18 14.8358 18 15.25C18 15.6642 17.6642 16 17.25 16H2.75C2.33579 16 2 15.6642 2 15.25Z"
+                  fill="#0F948B"
+                />
+              </svg>
+            )}
+
             <Typography
               variant="h5"
               component={"div"}
@@ -184,7 +210,7 @@ const Sidebar: React.FC = () => {
             flexShrink: 0,
             "& .MuiDrawer-paper": {
               borderRight: "1px solid #0F948B",
-              width: drawerWidth,
+              width: isMediumScreen ? 300 : drawerWidth,
               boxSizing: "border-box",
               backgroundColor: "#013b37",
               scrollbarWidth: "thin",
@@ -201,9 +227,9 @@ const Sidebar: React.FC = () => {
               borderRadius: "3px",
             },
           }}
-          variant="permanent"
+          variant={isMediumScreen ? "temporary" : "permanent"}
           anchor="left"
-          open={true}
+          open={smallDrawerOpen}
         >
           <Box
             minHeight={54}
@@ -212,6 +238,26 @@ const Sidebar: React.FC = () => {
             alignItems={"center"}
             paddingX={2}
           >
+            {isMediumScreen && (
+              <svg
+                onClick={() => {
+                  setSmallDrawerOpen(!smallDrawerOpen);
+                }}
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M15.75 19.5L8.25 12L15.75 4.5"
+                  stroke="#0F948B"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            )}
             {/* Logo svg code */}
             <svg
               width="116"
@@ -262,7 +308,7 @@ const Sidebar: React.FC = () => {
         </Drawer>
 
         <Box
-          className="container"
+          className="container-fluid"
           component="main"
           sx={{ bgcolor: "#013b37", height: "100vh" }}
         >
@@ -270,6 +316,7 @@ const Sidebar: React.FC = () => {
 
           {adviseryTitle === "General" && <General />}
           {adviseryTitle === "Strategy" && <Strategy />}
+          <ChatInput />
         </Box>
       </Box>
     </div>
