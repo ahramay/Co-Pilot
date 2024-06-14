@@ -4,13 +4,9 @@
 @import "./historyList.css";
 @import "./general.css";
 @import "./strategy.css";
-@import "./userMessage.css";
-@import "./botResponce.css";
 @import "./chatInput.css";
 @import "./chatHead.css";
-
-
-
+@import "./smallStrategy.css";
 
 /* small navbar */
 @import "./smallNavbar.css";

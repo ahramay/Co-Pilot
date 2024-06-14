@@ -29,9 +29,7 @@
   font-weight: 400 !important;
   line-height: 151.4% !important; /* 24.224px */
 }
-.chatInput .inputField::placeholder {
-  color: red !important;
-}
+
 .chatInput .iconButton svg {
   transition: fill 0.5s ease-in-out;
 }
@@ -56,6 +54,62 @@
   position: absolute;
   right: 30px;
 }
+
+.smallChatInput {
+  height: 50px;
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--background);
+  position: absolute;
+  bottom: 4px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+.smallChatInput .smallChatPaper {
+  padding: 2px 4px !important;
+  display: flex !important;
+  background-color: #013b37 !important;
+  border: 1px solid #0f948b !important;
+  border-radius: 10px !important;
+  width: 100%;
+}
+.smallChatInput .inputField {
+  color: #fff !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 151.4% !important; /* 24.224px */
+}
+
+.smallChatInput .iconButton svg {
+  transition: fill 0.5s ease-in-out;
+}
+
+.smallChatInput .smallChatPaper:hover {
+  transition: 0.5s ease-in-out;
+  border-color: var(--iconsColor) !important;
+}
+
+.smallChatInput .smallChatPaper:hover .iconButton path {
+  fill: var(--background) !important;
+}
+
+.smallChatPaper:hover .iconButton rect {
+  fill: var(--iconsColor) !important;
+}
+
+.smallChatInput .smallChatPaper:hover .iconButton2 path {
+  fill: var(--iconsColor) !important;
+}
+.smallChatInput .botIcon {
+  position: absolute;
+  right: 30px;
+}
+
 @media screen and (max-width: 899px) {
   .chatInput .botIcon {
     position: static;

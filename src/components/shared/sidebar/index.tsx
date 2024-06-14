@@ -11,15 +11,19 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import collapseData from "./collapseData";
 // import icons here
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 
 // import Images here
 import HistoryList from "../historyList";
-import General from "../../pages/home/general";
-import Strategy from "../../pages/home/strategy";
+import General from "../../pages/general";
+import Strategy from "../../pages/strategy";
 import ChatInput from "../chatInput";
+import { setAdvisery } from "../../../redux/slice/adviserySlice";
+import { RootState } from "../../../redux";
 const drawerWidth = 240;
 
 interface CaretIconProps {
@@ -54,18 +58,24 @@ const dummyData: { date: string; msg: string[] }[] = [
 ];
 
 const Sidebar: React.FC = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [smallDrawerOpen, setSmallDrawerOpen] = useState<boolean>(false);
-  const [activeAdvisery, setActiveAdvisery] = useState<Number>(0);
-  const [adviseryTitle, setAdviseryTitle] = useState<string>("General");
   const theme = useTheme();
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
+  // ------------  import redux state here
+  const advisery = useSelector(
+    (state: RootState) => state.advisery.selectedAdvisery
+  );
+
+  // --------------
+
   const handleCollapse = () => {
     setOpen(!open);
   };
-  const adviseryChange = (index: number, title: string) => {
-    setActiveAdvisery(index);
-    setAdviseryTitle(title);
+  const adviseryChange = (title: string) => {
+    dispatch(setAdvisery(title));
     handleCollapse();
   };
   return (
@@ -116,7 +126,7 @@ const Sidebar: React.FC = () => {
               className="selectedAdviser"
               sx={{ cursor: "pointer" }}
             >
-              {adviseryTitle}
+              {advisery}
               <CaretIcon isActive={open}>
                 <KeyboardArrowDownOutlinedIcon
                   sx={{ backgroundColor: "transparent" }}
@@ -131,6 +141,7 @@ const Sidebar: React.FC = () => {
               viewBox="0 0 24 25"
               fill="none"
               cursor="pointer"
+              onClick={() => navigate("/")}
             >
               <path
                 d="M11.4697 4.09601C11.7626 3.80312 12.2374 3.80312 12.5303 4.09601L21.2197 12.7854C21.5126 13.0782 21.9874 13.0782 22.2803 12.7854C22.5732 12.4925 22.5732 12.0176 22.2803 11.7247L13.591 3.03535C12.7123 2.15667 11.2877 2.15667 10.409 3.03535L1.71967 11.7247C1.42678 12.0176 1.42678 12.4925 1.71967 12.7854C2.01256 13.0782 2.48744 13.0782 2.78033 12.7854L11.4697 4.09601Z"
@@ -143,12 +154,10 @@ const Sidebar: React.FC = () => {
             </svg>
           </Box>
           <Collapse
+            component="div"
             className="appbarCollapse"
             in={open}
             sx={{
-              position: "fixed",
-              top: 50,
-              left: 300,
               "& .MuiDrawer-paper": {
                 width: drawerWidth,
                 boxSizing: "border-box",
@@ -171,7 +180,7 @@ const Sidebar: React.FC = () => {
             {collapseData.map((value, index) => {
               return (
                 <div
-                  onClick={() => adviseryChange(index, value.title)}
+                  onClick={() => adviseryChange(value.title)}
                   key={`${value.title}_ ${index}`}
                   className="collapseDiv"
                 >
@@ -181,7 +190,7 @@ const Sidebar: React.FC = () => {
                     <small>{value.text}</small>
                   </section>
 
-                  {activeAdvisery === index && (
+                  {advisery === value.title && (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -314,8 +323,8 @@ const Sidebar: React.FC = () => {
         >
           <Toolbar />
 
-          {adviseryTitle === "General" && <General />}
-          {adviseryTitle === "Strategy" && <Strategy />}
+          {advisery === "General" && <General />}
+          {advisery === "Strategy" && <Strategy />}
           <ChatInput />
         </Box>
       </Box>

@@ -14,6 +14,9 @@
 }
 /* side collapse  */
 .sidebar .appbarCollapse {
+  position: fixed;
+  top: 50px;
+  left: 250px;
   border: 2px solid var(--inactive);
   border-radius: 8px;
   padding: 8px;
@@ -58,4 +61,18 @@
   font-weight: 400;
   /* line-height: 151.2%; */
   background-color: transparent;
+}
+
+@media screen and (max-width: 850px) {
+  .sidebar .appbarCollapse {
+    left: 150px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .sidebar .appbarCollapse {
+    left: 0px;
+    right: 0px;
+    width: 90%;
+    margin: auto;
+  }
 }

@@ -1,23 +1,25 @@
 import { Box, Fade, Popper } from "@mui/material";
-import React from "react";
-import HistoryList from "../../shared/historyList";
-import General from "../home/general";
-import Strategy from "../home/strategy";
+import React, { useState } from "react";
 import SmallNavbar from "../../shared/smallNavbar";
-
-interface FadeProps {
-  children?: React.ReactElement;
-  in?: boolean;
-  onEnter?: () => void;
-  onExited?: () => void;
-}
-
+import SmallGeneral from "../smallGeneral";
+import SmallChatInput from "../../shared/chatInput/smallChatInput";
+import { RootState } from "../../../redux";
+import { useSelector } from "react-redux";
+import SmallStrategy from "../smallStrategy";
 const ChatHead: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const advisery = useSelector(
+    (state: RootState) => state.advisery.selectedAdvisery
+  );
+
   return (
     <div>
       <Box className="chathead" component="div">
         <svg
-          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setOpen(!open);
+          }}
+          style={{ cursor: "pointer", zIndex: 1300 }}
           xmlns="http://www.w3.org/2000/svg"
           width="56"
           height="48"
@@ -52,7 +54,7 @@ const ChatHead: React.FC = () => {
           paddingBottom: "110px",
           paddingRight: "20px",
         }}
-        open={true}
+        open={open}
         transition
       >
         {({ TransitionProps }) => (
@@ -65,9 +67,14 @@ const ChatHead: React.FC = () => {
                 height: 550,
                 borderColor: "#0F948B",
                 borderRadius: 3,
+                position: "relative", // Ensure position is relative for absolute children
               }}
             >
-                <SmallNavbar/>
+              <SmallNavbar />
+              {advisery === "General" && <SmallGeneral />}
+              {advisery === "Strategy" && <SmallStrategy />}
+
+              <SmallChatInput />
             </Box>
           </Fade>
         )}

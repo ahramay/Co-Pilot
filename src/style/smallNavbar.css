@@ -34,3 +34,52 @@
   font-weight: 400;
   background-color: transparent;
 }
+/* history list on small screen */
+.smallNavbar .smallhistoryList .historySection {
+  width: 100%;
+  border-bottom: 1px solid #0f948b;
+  padding: 2px 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.smallNavbar .smallhistoryList .historySection:hover {
+  background-color: #0f948b !important;
+  border-radius: 8px;
+}
+.smallNavbar .smallhistoryList .pastTime {
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--Inactive, #0f948b);
+}
+
+.smallNavbar .smallhistoryList .delIcon {
+  font-size: 20px;
+  display: flex;
+  cursor: pointer;
+  color: #013b37;
+  position: relative;
+  top: 8px;
+  left: 270px;
+  z-index: 12;
+  background-color: transparent !important;
+}
+
+.smallNavbar .smallhistoryList .historyText {
+  font-family: Roboto;
+  font-size: 15px;
+  width: 95% !important;
+  background-color: transparent !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 151.8%;
+  color: #fff;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
