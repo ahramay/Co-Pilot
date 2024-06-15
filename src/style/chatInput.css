@@ -8,16 +8,16 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--background);
+  background-color: var(--darkBackground);
 }
 .chatInput .chatPaper {
-  padding: 2px 4px !important;
-  display: flex !important;
-  align-items: flex-end !important;
+  padding: 2px 4px;
+  display: flex;
+  align-items: flex-end;
   width: 50%;
-  background-color: #013b37 !important;
-  border: 1px solid #0f948b !important;
-  border-radius: 18px !important;
+  background-color: var(--darkBackground);
+  border: 1px solid #0f948b;
+  border-radius: 18px;
   margin-left: 50px;
 }
 
@@ -61,7 +61,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--background);
   position: absolute;
   bottom: 4px;
   left: 0px;
@@ -72,7 +71,7 @@
 .smallChatInput .smallChatPaper {
   padding: 2px 4px !important;
   display: flex !important;
-  background-color: #013b37 !important;
+  background-color: #012926 !important;
   border: 1px solid #0f948b !important;
   border-radius: 10px !important;
   width: 100%;

@@ -1,12 +1,12 @@
 .sidebar {
-  background-color: var(--background) !important;
+  background-color: var(--darkBackground);
 }
 .sidebar .appBar {
-  background-color: var(--background) !important;
+  background-color: var(--darkBackground);
 }
 .sidebar .appBar .selectedAdviser {
   color: var(--Inactive, #0f948b);
-  font-family: Roboto;
+  font-family: Poppins;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -22,7 +22,7 @@
   padding: 8px;
   max-height: 350px;
   overflow-y: auto;
-  background-color: var(--background);
+  background-color: var(--darkBackground);
 }
 .sidebar .appbarCollapse .collapseDiv {
   display: flex;

@@ -5,7 +5,7 @@
 }
 .smallNavbar .adviseryName {
   color: var(--Inactive, #0f948b);
-  font-family: Roboto;
+  font-family: Poppins;
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
@@ -60,11 +60,12 @@
   font-size: 20px;
   display: flex;
   cursor: pointer;
-  color: #013b37;
+  color: #012926;
   position: relative;
   top: 8px;
   left: 270px;
   z-index: 12;
+
   background-color: transparent !important;
 }
 

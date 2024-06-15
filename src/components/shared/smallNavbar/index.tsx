@@ -153,14 +153,14 @@ const SmallNavbar: React.FC = () => {
           overflow: "auto",
           width: "100%",
           position: "absolute",
-          backgroundColor: "#013B37",
+          backgroundColor: "#012926",
           left: 0,
           right: 0,
           marginX: "auto",
           padding: 2,
-          maxHeight: 495,
+          maxHeight: 490,
           zIndex: 1300,
-          borderRadius: 4,
+          borderRadius: "0px 0px 20px 20px",
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             backgroundColor: "#013b37",
@@ -180,6 +180,20 @@ const SmallNavbar: React.FC = () => {
         }}
         in={openCollap}
       >
+        <Typography
+          sx={{
+            color: "#FFF",
+            fontFamily: "Roboto",
+            fontSize: "16px",
+            fontStyle: "normal",
+            fontWeight: 400,
+            lineHeight: "normal",
+            margin: "10px",
+          }}
+          component={"p"}
+        >
+          Select Advisor
+        </Typography>
         {collapseData.map((value, index) => (
           <div
             onClick={() => adviseryChange(value.title)}
@@ -214,7 +228,7 @@ const SmallNavbar: React.FC = () => {
       <Box
         sx={{
           position: "absolute",
-          top: 51,
+          top: 58,
           left: 0,
           right: 0,
           bottom: 0,
@@ -232,8 +246,8 @@ const SmallNavbar: React.FC = () => {
               height: "100%",
               margin: "auto",
               padding: 2,
-              borderRadius: 3,
-              backgroundColor: "#013b37",
+              borderRadius: 4,
+              backgroundColor: "#012926",
               boxSizing: "border-box",
               scrollbarWidth: "thin",
               scrollbarColor: "#15CC8F transparent",

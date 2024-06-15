@@ -177,6 +177,20 @@ const Sidebar: React.FC = () => {
               },
             }}
           >
+            <Typography
+              sx={{
+                color: "#FFF",
+                fontFamily: "Roboto",
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: 400,
+                lineHeight: "normal",
+                margin:"10px"
+              }}
+              component={"p"}
+            >
+              Select Advisor
+            </Typography>
             {collapseData.map((value, index) => {
               return (
                 <div
@@ -221,7 +235,7 @@ const Sidebar: React.FC = () => {
               borderRight: "1px solid #0F948B",
               width: isMediumScreen ? 300 : drawerWidth,
               boxSizing: "border-box",
-              backgroundColor: "#013b37",
+              backgroundColor: "#012926",
               scrollbarWidth: "thin",
               scrollbarColor: "#15CC8F transparent",
             },
@@ -319,7 +333,7 @@ const Sidebar: React.FC = () => {
         <Box
           className="container-fluid"
           component="main"
-          sx={{ bgcolor: "#013b37", height: "100vh" }}
+          sx={{ bgcolor: "#012926", height: "100vh" }}
         >
           <Toolbar />
 

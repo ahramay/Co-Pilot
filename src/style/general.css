@@ -19,7 +19,7 @@
   width: 90%;
   height: 150px;
   border-radius: 8px;
-  background-color: var(--Background, #013b37);
+  background-color: var(--darkBackground);
   border: 1px solid var(--inactive);
   padding: 16px;
   cursor: pointer;

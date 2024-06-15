@@ -19,7 +19,15 @@ const ChatHead: React.FC = () => {
           onClick={() => {
             setOpen(!open);
           }}
-          style={{ cursor: "pointer", zIndex: 1300 }}
+          style={{
+            cursor: "pointer",
+            zIndex: 1300,
+            backgroundColor: "#012926",
+            width:"70px",
+            height:"70px",
+            padding:"8px",
+            borderRadius:"50%"
+          }}
           xmlns="http://www.w3.org/2000/svg"
           width="56"
           height="48"
@@ -66,6 +74,7 @@ const ChatHead: React.FC = () => {
                 width: 350,
                 height: 550,
                 borderColor: "#0F948B",
+                backgroundColor: "#012926",
                 borderRadius: 3,
                 position: "relative", // Ensure position is relative for absolute children
               }}

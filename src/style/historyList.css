@@ -15,11 +15,11 @@
   font-size: 20px;
   display: flex;
   cursor: pointer;
-  color: #013b37;
   position: relative;
   top: 15px;
   left: 190px;
   z-index: 12;
+  color: #012926;
   background-color: transparent !important;
 }
 .historyList .historySection {
